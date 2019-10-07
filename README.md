@@ -1,2 +1,2 @@
-#SOCIO-CONNECT
-##A social UI theme using bootstrap framework
+# SOCIO-CONNECT
+## A social UI theme using bootstrap framework
