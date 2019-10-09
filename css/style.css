@@ -30,3 +30,6 @@
   border: none;
   border-radius: 50%;
 }
+html {
+  scroll-behavior: smooth;
+}

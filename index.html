@@ -30,7 +30,7 @@
         <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav" id="navbar-links">
                 <li class="nav-item">
-                  <a href="#navbar" class="nav-link">Home</a>
+                  <a href="#header" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                   <a href="#explore-section" class="nav-link">Explore</a>
@@ -136,7 +136,7 @@
             <p class="lead mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum quam velit ducimus quasi et sed.</p>
               <div class="d-flex flex-row mb-5 ml-4">
                   <i
-                    class="fas fa-check-square fa-3x mr-4 align-self-center text-primary"
+                    class="fas fa-check-square fa-3x mr-4 align-self-center"
                   ></i>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Quibusdam recusandae quo tempora, fugit consequatur ea.
@@ -214,10 +214,43 @@
             </div>
           </div>
         </section>
-        <footer class="text-center py-4 custom-bg text-white mb-0">
-          <h2>LoopLAB</h2>
-          <span class="font-weight-bold d-block">Copyright &copy;2019</span>
-          <a href="#header-part-2" class="btn btn-primary mt-3">Contact Us</a>
+        <footer class="py-4 custom-bg text-white mb-0">
+          <div id="footer-content" class="text-center">
+              <h2>LoopLAB</h2>
+              <span class="font-weight-bold d-block">Copyright &copy;2019</span>
+              <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#contact-modal">Contact Us</button>
+          </div>  
+          <div class="modal text-dark" id="contact-modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 >Contact Us</h5>
+                  <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="">
+                    <div class="form-group">
+                      <label for="Name">Name</label>
+                      <input id="Name" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="Email">Email</label>
+                      <input type="email" id="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="Message">Message</label>
+                      <textarea id="Message" class="form-control"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary btn-block" data-dismiss="modal">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </footer>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -234,5 +267,8 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      $('body').scrollspy('#navbar');
+    </script>
   </body>
 </html>
