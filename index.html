@@ -17,10 +17,10 @@
     />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body  data-spy="scroll" data-target="#navbar" id="home">
     <nav
       id="navbar"
-      class="navbar sticky-top navbar-expand-md navbar-dark bg-dark"
+      class="navbar fixed-top navbar-expand-md navbar-dark bg-dark"
     >
       <div class="container ">
         <a href="#" class="navbar-brand"><h3>Socio-CONNECT</h3></a>
@@ -30,7 +30,7 @@
         <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav" id="navbar-links">
                 <li class="nav-item">
-                  <a href="#header" class="nav-link">Home</a>
+                  <a href="#home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                   <a href="#explore-section" class="nav-link">Explore</a>
@@ -49,7 +49,7 @@
       <div class="overlay"></div>
       <div class="container">
         <div id="header-content" class="row align-items-center">
-          <div class="col-lg-8 text-white" id="header-part-1">
+          <div class="col-lg-8 d-none d-lg-block text-white" id="header-part-1">
             <p class="display-4 mb-4 text-center text-sm-left">
               Build <strong>Social Profiles</strong> and Gain Revenue
               <strong>Profits</strong>
@@ -57,18 +57,18 @@
             <div class="d-flex flex-column">
               <div class="d-flex flex-row mb-5">
                 <i
-                  class="fas fa-check-square fa-3x mr-4 align-self-center text-primary"
+                  class="fas fa-check fa-2x mr-4 align-self-center text-primary"
                 ></i>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quibusdam recusandae quo tempora, fugit consequatur ea.
               </div>
               <div class="d-flex flex-row mb-5">
-                <i class="fas fa-check-square fa-3x mr-4 align-self-center"></i>
+                <i class="fas fa-check fa-2x mr-4 align-self-center"></i>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quibusdam recusandae quo tempora, fugit consequatur ea.
               </div>
               <div class="d-flex flex-row mb-5">
-                <i class="fas fa-check-square fa-3x mr-4 align-self-center"></i>
+                <i class="fas fa-check fa-2x mr-4 align-self-center"></i>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quibusdam recusandae quo tempora, fugit consequatur ea.
               </div>
@@ -129,7 +129,7 @@
       <div class="container">
         <div id="exp-sect-content" class="row mb-3">
           <div id="exp-sect-img" class="col-sm-6">
-            <img src="./img/explore-section1.jpg" class="round-img" alt="">
+            <img src="./img/explore-section1.jpg" class="img-fluid rounded-circle mb-3" alt="Explore">
           </div>
           <div id="exp-sect-con" class="col-sm-6 text-center text-sm-left">
             <h3 class="text-secondary">Explore and Connect</h3>
@@ -177,7 +177,7 @@
                   </div>
             </div>
             <div id="create-sect-img mt-3" class="col-sm-6">
-                <img src="./img/create-section1.jpg" class="round-img" alt="">
+                <img src="./img/create-section1.jpg" class="img-fluid rounded-circle mb-3" alt="Create">
               </div>
           </div>
         </div>
@@ -193,7 +193,7 @@
           <div class="container">
             <div id="share-sect-content" class="row">
               <div id="share-sect-img" class="col-sm-6 mb-3">
-                <img src="./img/share-section1.jpg" class="round-img" alt="">
+                <img src="./img/share-section1.jpg" class="img-fluid rounded-circle mb-3" alt="Share">
               </div>
               <div id="share-sect-con" class="col-sm-6 text-center text-sm-left">
                 <h3 class="text-secondary">Share What You Create</h3>
