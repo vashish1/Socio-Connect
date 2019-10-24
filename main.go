@@ -1,13 +1,19 @@
 package main
 
 import (
-	"QuizPortal/database"
+	"Socio-Connect/database"
 	"fmt"
 	"log"
 	"net/http"
+	"text/template"
 
 	"github.com/gorilla/mux"
+	"go.mongodb.org/mongo-driver/mongo"
 )
+
+var cl1 *mongo.Collection
+var cl2 *mongo.Collection
+var c *mongo.Client
 
 func main() {
 	r := NewRouter()
@@ -32,7 +38,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		{
 
 			fmt.Println("yeh chlra hai")
-			t, err := template.ParseFiles("C:/Users/yashi/go/src/QuizPortal/templates/signup.html")
+			t, err := template.ParseFiles("C:/Users/yashi/go/src/Socio-Connect/index.html")
 			if err != nil {
 				log.Fatal("Could not parse template files\n")
 			}
@@ -48,9 +54,15 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			a := r.FormValue("username")
 
 			b := r.FormValue("email")
-			c := r.FormValue("branch")
-			d := r.FormValue("year")
-
+			c := r.FormValue("password")
+			fmt.Println(a,b,c)
+			u := database.Newuser(a, b, c)
+			database.Insertintouserdb(cl1, u)
+			http.Redirect(w,r,"/Socioconnect",302)
 		}
 	}
+}
+
+func init() {
+	cl1, cl2, c = database.Createdb()
 }

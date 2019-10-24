@@ -79,10 +79,11 @@
               <div class="card-body ">
                 <h3>Sign Up Today</h3>
                 <p>Please fill out this form to register</p>
-                <form action="#">
+                <form action="/Socioconnect" method="POST">
                   <div class="form-group">
                     <input
                       placeholder="Username"
+                      name="username"
                       type="text"
                       class="form-control"
                     />
@@ -90,6 +91,7 @@
                   <div class="form-group">
                     <input
                       placeholder="Email"
+                      name="email"
                       type="email"
                       class="form-control"
                     />
@@ -97,6 +99,7 @@
                   <div class="form-group">
                     <input
                       type="password"
+                      name="password"
                       placeholder="Password"
                       class="form-control"
                     />
@@ -104,6 +107,7 @@
                   <div class="form-group">
                     <input
                       type="password"
+                      name="password2"
                       placeholder="Confirm Password"
                       class="form-control"
                     />
@@ -270,5 +274,20 @@
     <script>
       $('body').scrollspy('#navbar');
     </script>
+    <script>
+    $('.icon2').click(function(e){
+      e.preventDefault();
+      var idstr=this.id.toString();
+      console.log(idstr);
+        $.ajax({
+        type:"POST",
+        url:"/Contact",
+        data:{
+          'name':idstr
+           },
+        });
+            } )
+  
+  </script>
   </body>
 </html>
