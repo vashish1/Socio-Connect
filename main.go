@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Socio-Connect/database"
+    "Socio-Connect/database"
 	"fmt"
 	"log"
 	"net/http"
@@ -55,10 +55,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 			b := r.FormValue("email")
 			c := r.FormValue("password")
-			fmt.Println(a,b,c)
+			fmt.Println(a, b, c)
 			u := database.Newuser(a, b, c)
 			database.Insertintouserdb(cl1, u)
-			http.Redirect(w,r,"/Socioconnect",302)
+			http.Redirect(w, r, "/Socioconnect", 302)
 		}
 	}
 }
