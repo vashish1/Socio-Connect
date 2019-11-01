@@ -104,3 +104,13 @@ func Insertintodb(collection *mongo.Collection, u Contact) {
 
 	fmt.Println("Inserted a single document: ", insertResult.InsertedID)
 }
+
+//Newcontact creates new contact
+func Newcontact(a string,b string,c string) Contact {
+	var contact = Contact{
+		Name:    a,
+		Email:   b,
+		Message: c,
+	}
+	return contact
+}

@@ -1,7 +1,7 @@
 package main
 
 import (
-    "Socio-Connect/database"
+	"Socio-Connect/database"
 	"fmt"
 	"log"
 	"net/http"
@@ -18,6 +18,7 @@ var c *mongo.Client
 func main() {
 	r := NewRouter()
 	r.HandleFunc("/Socioconnect", handler).Methods("GET", "POST")
+	r.HandleFunc("/contact", data).Methods("POST")
 	http.Handle("/", r)
 	http.ListenAndServe(":8000", nil)
 }
@@ -30,7 +31,7 @@ func NewRouter() *mux.Router {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("yahaan aagya")
+	fmt.Println("handler mein aagya")
 
 	switch r.Method {
 
@@ -60,6 +61,20 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			database.Insertintouserdb(cl1, u)
 			http.Redirect(w, r, "/Socioconnect", 302)
 		}
+	}
+}
+func data(w http.ResponseWriter, r *http.Request) {
+	fmt.Print("data mein aagya")
+	if r.Method == "POST" {
+		fmt.Println(" lets see if it works ")
+		a := r.FormValue("name")
+
+		b := r.FormValue("email")
+		c := r.FormValue("message")
+		fmt.Println(a, b, c)
+		u := database.Newcontact(a, b, c)
+		database.Insertintodb(cl2, u)
+		http.Redirect(w, r, "/Socioconnect", 302)
 	}
 }
 

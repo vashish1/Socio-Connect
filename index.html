@@ -237,15 +237,15 @@
                   <form action="">
                     <div class="form-group">
                       <label for="Name">Name</label>
-                      <input id="Name" type="text" class="form-control">
+                      <input id="Name" type="text" name="name"c lass="form-control">
                     </div>
                     <div class="form-group">
                       <label for="Email">Email</label>
-                      <input type="email" id="Email" class="form-control">
+                      <input type="email" name="email" id="Email" class="form-control">
                     </div>
                     <div class="form-group">
                       <label for="Message">Message</label>
-                      <textarea id="Message" class="form-control"></textarea>
+                      <textarea id="Message" name="message" class="form-control"></textarea>
                     </div>
                   </form>
                 </div>
@@ -275,19 +275,26 @@
       $('body').scrollspy('#navbar');
     </script>
     <script>
-    $('.icon2').click(function(e){
-      e.preventDefault();
-      var idstr=this.id.toString();
-      console.log(idstr);
-        $.ajax({
-        type:"POST",
-        url:"/Contact",
-        data:{
-          'name':idstr
-           },
-        });
-            } )
-  
+    $('.icon').click(function(e){
+    button=this.Value;
+        console.log(button);
+        e.preventDefault();
+        if (button === "Submit") {
+            var Name =$("#Name").val(),
+            Email =$("#Email").val(),
+            Message =$("#Message").val();
+            console.log(FirstName);
+            $.ajax({
+                url:"/contact",
+                type:"POST",
+                data: {'button':button, "name":Name, "email":Email, "message":Message },
+                success: function(results) {
+                    console.log(results);
+                    $('#response').html(results);
+                }
+            })
+        }
+    })
   </script>
   </body>
 </html>
