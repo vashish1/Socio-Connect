@@ -31,14 +31,14 @@ func NewRouter() *mux.Router {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("handler mein aagya")
+	
 
 	switch r.Method {
 
 	case "GET":
 		{
 
-			fmt.Println("yeh chlra hai")
+			
 			t, err := template.ParseFiles("C:/Users/yashi/go/src/Socio-Connect/index.html")
 			if err != nil {
 				log.Fatal("Could not parse template files\n")
@@ -51,7 +51,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		log.Print("working")
 	case "POST":
 		{
-			fmt.Println(" lets see if it works ")
+			
 			a := r.FormValue("username")
 
 			b := r.FormValue("email")
@@ -64,9 +64,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 func data(w http.ResponseWriter, r *http.Request) {
-	fmt.Print("data mein aagya")
+	
 	if r.Method == "POST" {
-		fmt.Println(" lets see if it works ")
+		
 		a := r.FormValue("name")
 
 		b := r.FormValue("email")
